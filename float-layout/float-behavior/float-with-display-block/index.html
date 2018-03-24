@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /*the below shows the behavior for float div inside float div*/
+        #outer {
+            float: left;
+            height: 500px;
+            width: 500px;
+            background-color: pink;
+        }
+        #inner {
+            float: right;
+            height: 50%;
+            width: 120%;
+            display: block;
+            background-color: cornflowerblue;
+        }
+        /*the below shows behavior for block div inside float div*/
+        #outer1 {
+            float: left;
+            height: 500px;
+            width: 500px;
+            background-color: antiquewhite;
+        }
+        #inner1 {
+            height: 50%;
+            width: 120%;
+            display: block;
+            background-color: cornflowerblue;
+        }
+        /*things actually work as you'd expect, which means if I wanted a
+        full block that takes the window space in a float div I can still do something like
+         */
+        #outer2 {
+            float: left;
+            height: 100%;
+            width: 100%;
+            background-color: antiquewhite;
+        }
+        #inner2 {
+            display: block;
+            background-color: cornflowerblue;
+        }
+        /*below is a magic code that lets the browser estimate the
+        pane size that will cover the whole browser pane or
+         sometimes known as the initial static viewport size
+         */
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+
+        /*this just asserts that the
+        the above did what I said it would
+         */
+        #outer3 {
+            float: left;
+            background-color: antiquewhite;
+        }
+        #inner3 {
+            float: left;
+            background-color: cornflowerblue;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="outer">
+        <div id="inner">
+        </div>
+    </div>
+    <div id="outer1">
+        <div id="inner1">
+        </div>
+        <div>
+            hi
+        </div>
+    </div>
+    <div id="outer2">
+        <div id="inner2">
+        </div>
+        <div>
+            bye
+        </div>
+    </div>
+    <div id="outer3">
+        <div id="inner3">
+            below div
+        </div>
+    </div>
+</body>
+</html>
