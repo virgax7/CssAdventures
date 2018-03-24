@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        #inner {
+            width: 100%;
+            height: 100%;
+            background-color: pink;
+            float: left;
+            /*this works in that inner will take over parent*/
+            /*pink + cornflowerblue is light purple*/
+            opacity: 0.5;
+
+        }
+        #outer {
+            width: 500px;
+            height: 500px;
+            /*without float, width would just fill in whatever it can depending*/
+            /*on the y-axis track, since div is a block element*/
+
+            /*in float based layouts, you need to specify width and height*/
+            float: left;
+            background-color: cornflowerblue;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="outer">
+        <div id="inner">
+        </div>
+    </div>
+</body>
+</html>
