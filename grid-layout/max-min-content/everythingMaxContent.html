@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .z {
+            background-color: peachpuff;
+            width: 80px;
+            height: 80px;
+            border: 2px solid red;
+        }
+        #a, #b, #c, #d, #e, #f {
+            background-color: peachpuff;
+            width: 80px;
+            height: 80px;
+            border: 2px solid red;
+        }
+        #a {
+            width: 130px;
+            background-color: lightsteelblue;
+            opacity: 0.5;
+        }
+        #c {
+            height: 150px;
+            background-color: lightsteelblue;
+            opacity: 0.5;
+        }
+        #e {
+            width: 130px;
+            height: 150px;
+            background-color: lightsteelblue;
+            opacity: 0.5;
+        }
+        #f {
+            width: 170px;
+            background-color: lightsteelblue;
+            opacity: 0.5;
+        }
+        #x {
+            background-color: lightsteelblue;
+            width: 80px;
+            height: 80px;
+            border: 2px solid red;
+            opacity: 0.5;
+        }
+        #grid {
+            display: grid;
+            grid-template-columns: max-content max-content max-content max-content;
+            /*grid-template-columns: max-content 2em max-content max-content;*/
+            /*grid-template-columns: max-content 2em 10em 10em;*/
+            grid-template-rows: 8em 3em 16em;
+        }
+    </style>
+</head>
+<body>
+    <div id="grid">
+        <div class="z"></div>
+        <div id="a"></div>
+        <div id="b"></div>
+        <div id="c"></div>
+
+        <div id="x"></div>
+        <div id="d"></div>
+        <div id="e"></div>
+        <div id="f"></div>
+
+
+        <div class="z"></div>
+        <div class="z"></div>
+        <div class="z"></div>
+        <div class="z"></div>
+    </div>
+</body>
+</html>
