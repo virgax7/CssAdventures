@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ThreeFullColumn</title>
+    <style>
+        body, html {
+            width: 100%;
+            height: 100%;
+        }
+
+        #grid {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: [leftColumn] 20% [mainColumn] 60% [rightColumn] 20%;
+            margin-top: 20px;
+        }
+
+        #navBar {
+            position: fixed;
+            background-color: black;
+            top: 0px;
+            width: 100%;
+            height: 20px;
+        }
+
+        #footer {
+            position: fixed;
+            background-color: black;
+            bottom: 0px;
+            width: 100%;
+            height: 20px
+        }
+
+        #leftColumn {
+            background-color: palevioletred;
+        }
+
+        #mainColumn {
+            background-color: lavender;
+        }
+
+        #rightColumn {
+            background-color: lightsteelblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="navBar"></div>
+    <div id="grid">
+        <div id="leftColumn"></div>
+        <div id="mainColumn"></div>
+        <div id="rightColumn"></div>
+    </div>
+    <div id="footer"></div>
+</body>
+</html>
