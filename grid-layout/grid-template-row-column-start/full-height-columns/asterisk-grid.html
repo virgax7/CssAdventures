@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #grid {
+            width: 150px;
+            height: 150px;
+            border: 1px black solid;
+            margin: 0 auto;
+        }
+
+        #grid {
+            display: grid;
+            grid-template-columns: repeat(3, [i] 50px);
+            grid-template-rows: repeat(3, [j] 50px);
+        }
+
+        #grid1 {
+            background-color: violet;
+            grid-row-start: 1; grid-row-end: 1;
+            grid-column-start: 1;
+        }
+
+        #grid2 {
+            background-color: violet;
+            grid-row-start: 1;
+            grid-column-start: 3;
+        }
+
+        #grid3 {
+            background-color: violet;
+            grid-row-start: 2;
+            grid-column-start: 2;
+            opacity: 0.5;
+        }
+
+        #grid4 {
+            background-color: violet;
+            grid-row-start: 3;
+            grid-column-start: 1;
+        }
+
+        #grid5 {
+            background-color: violet;
+            grid-row-start: 3;
+            grid-column-start: 3;
+        }
+
+        #grid-track1 {
+            background-color: lightblue;
+            grid-row-start: 1; grid-row-end: span 3;
+            grid-column-start: 2;
+        }
+
+        #grid-track2 {
+            background-color: lightgreen;
+            grid-row-start: 2;
+            grid-column-start: span 3; grid-column-end: 4;
+        }
+    </style>
+</head>
+<body>
+<div id="grid">
+    <div id="grid1"></div>
+    <div id="grid2"></div>
+    <div id="grid3"></div>
+    <div id="grid4"></div>
+    <div id="grid5"></div>
+    <div id="grid-track1"></div>
+    <div id="grid-track2"></div>
+</div>
+</body>
+</html>
