@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #grid {
+            display: grid;
+            grid-template-areas:
+                    "header     header    header    header"
+                    "leftbar   content   content   rightcontent"
+                    "leftbar   bottom    bottom    bottom";
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+
+        /*for grid template areas, when you use a explicit name in grid-row or grid-column*/
+        /*the browser looks for that grid line name plus a -start or -end*/
+        /*depending on if its assigned to the start line or the end line*/
+
+        #x {
+            opacity: 0.5;
+            background-color: violet;
+            grid-row-start: header;
+            /*since this is made using grid-template-areas
+            it will do
+            grid-column-start: header-start;
+            grid-column-end: header-end;
+            and since we used areas, the whole 4 header rectangle is
+            bounded by header-start and header-end so this works
+            */
+
+            grid-column: header;
+            /* this is same as doing
+            grid-column: header / header
+            which is same as doing
+            grid-column: header-start / header-end
+            since we are using grid-template areas
+            */
+        }
+
+        #y {
+            opacity: 0.6;
+            background-color: red;
+            grid-row: content;
+
+            /* this is the equivalent of doing
+            grid-column: header-end / header-end
+            which is
+            grid-column-start: header-end 1;
+            grid-column-end: span 1;
+             */
+            grid-column: header-end;
+        }
+
+        #p {
+            opacity: 0.6;
+            background-color: red;
+            grid-row: header;
+            grid-column: header-start 1;
+        }
+
+        #z {
+            opacity: 0.6;
+            background-color: darkblue;
+            grid-row: header;
+            /* notice how the below is created for us implictly
+             */
+            grid-column: implicitly-created 2;
+        }
+
+        #a {
+            opacity: 0.6;
+            background-color: lightslategrey;
+            grid-row: header;
+            /* notice how implicitly-created 3 is created for us implicitly
+            but
+             */
+            grid-column: implicitly-created 3;
+        }
+
+        #b {
+            opacity: 0.6;
+            background-color: darkcyan;
+            grid-row: header;
+            /* notice how implicitly-created 1 is created for us implicitly
+            but actually it was created before by doing grid-column: implicitly-created 2
+            which created implicitly-created 1
+             */
+            grid-column: implicitly-created 1;
+        }
+
+        #c {
+            opacity: 0.6;
+            background-color: darkgoldenrod;
+            grid-row: content;
+            grid-column: implicitly-created;
+            /*same as doing*/
+            /*grid-column-start: implicitly-created-start;*/
+            /*grid-column-end: implicitly-created-end;*/
+
+            /*notice that because we didn't*/
+            /*define this guys in the grid-area-template*/
+            /*it isn't bounded by start and end for the whole three implicitly-created grids*/
+        }
+
+
+        #d {
+            opacity: 0.6;
+            background-color: orange;
+            grid-row: leftbar;
+            /*grid-column: header 2;*/
+            /*which is */
+            grid-column-start: header-start 2;
+            grid-column-end: span 1;
+            /*but also notice that header-start 3 seems like its at*/
+            /*header-start 4. that is because of the same reason as the
+            creating_new_column_in_codepen explanation*/
+        }
+
+        #e {
+            opacity: 0.6;
+            background-color: greenyellow;
+            grid-row: content;
+            /*grid-column: header 2;*/
+            /*which is */
+            grid-column-start: newcolumn 2;
+            grid-column-end: span 1;
+            /*but also notice that header-start 3 seems like its at*/
+            /*header-start 4. that is because in */
+            /*the browser expanded our 4 header rectangle to 5 because */
+        }
+
+        #sidebar {
+            opacity: 0.5;
+            background-color: peachpuff;
+            grid-row-start: 3;
+            grid-row-end: 4;
+            grid-column-start: leftbar;
+            grid-column-end: content-end;
+        }
+
+        #main {
+            background-color: black;
+            grid-row-start: content;
+            grid-row-end: content;
+            grid-column-start: content;
+        }
+
+        #navbar {
+            background-color: palevioletred;
+            grid-row-start: rightcontent;
+            grid-column-start: rightcontent;
+        }
+
+        #bottom {
+            background-color: aquamarine;
+            grid-row-start: 3;
+            grid-row-end: span 1;
+            grid-column-start: bottom-start;
+            grid-row-end: bottom;
+        }
+    </style>
+</head>
+<body>
+<div id="grid">
+    <div id="x"></div>
+    <div id="y"></div>
+    <div id="p"></div>
+    <div id="z"></div>
+    <div id="a"></div>
+    <div id="b"></div>
+    <div id="c"></div>
+    <div id="d"></div>
+    <div id="e"></div>
+    <div id="sidebar"></div>
+    <div id="main"></div>
+    <div id="navbar"></div>
+    <div id="bottom"></div>
+</div>
+</body>
+</html>
