@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #grid {
+            display: grid;
+            margin: 200px auto 0;
+            grid-template-rows: [start] 50px [middle] 50px [end];
+            grid-template-columns: repeat(5, 70px);
+        }
+
+        #a1 {
+            opacity: 0.6;
+            background-color: red;
+            grid-column: 5;
+            grid-row-start: span 3;
+            grid-row-end: start;
+        }
+
+        #a2 {
+            opacity: 0.6;
+            background-color: lightgreen;
+            grid-column: 2;
+            grid-row: 2 / 8;
+        }
+
+        #a3 {
+            opacity: 0.6;
+            background-color: darkcyan;
+            grid-column: 3;
+            grid-row: 1 / span 2;
+        }
+
+        #a4 {
+            opacity: 0.6;
+            background-color: olivedrab;
+            grid-column: 4;
+            grid-row: span middle 1 / end;
+            /*if you toggle middle for start,*/
+            /*you will essentially be doing*/
+            /*grid-row-start: span start 1;*/
+            /*grid-row-end: end;*/
+        }
+
+        #a5 {
+            opacity: 0.6;
+            background-color: lightblue;
+            grid-column: 5;
+            grid-row:  span start 2 / end;
+        }
+    </style>
+</head>
+<body>
+<div id="grid">
+    <div id="a1">
+        bbbbbbbbbbbb
+        bbbb
+        bbbbbbbb
+        bbbbbbbb
+        bbbbbb
+        bbbbbb
+    </div>
+    <div id="a2">aaaaaaaaaaaaa
+    aaaaaaaaaaaaaaaaaaa
+    aaaaaaaaa
+    aaaaaaaa
+    aaaaaaaaaaaaaaa
+    aaaaaaaaaaaaaa
+    aaaaaaaaa
+    aaaaaaa
+    aaaaaaaaaa
+    aaaaaaaaaa
+    aaaaaaaaaa
+    aaaaaaaaaa
+    aaaaaaaaaaa</div>
+    <div id="a3">[start]</div>
+    <div id="a4"></div>
+    <div id="a5"></div>
+</div>
+</body>
+</html>
